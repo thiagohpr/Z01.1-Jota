@@ -23,19 +23,21 @@ architecture arch of Nor8Way is
 	signal aux4 : std_logic;
 	signal aux5 : std_logic;
 	signal aux6 : std_logic;
+	signal aux7 : std_logic;
 
 
 begin
 
-	aux1 <= a nor b;
-	aux2 <= c nor d;
-	aux3 <= e nor f;
-	aux4 <= g nor h;
+	aux1 <= a or b;
+	aux2 <= c or d;
+	aux3 <= e or f;
+	aux4 <= g or h;
 
-	aux5 <= aux1 nor aux2;
-	aux6 <= aux3 nor aux4;
+	aux5 <= aux1 or aux2;
+	aux6 <= aux3 or aux4;
+	aux7 <= aux5 or aux6;
 
-	q <= aux5 nor aux6;	
+	q <= not aux7;	
 
 
 end architecture;
