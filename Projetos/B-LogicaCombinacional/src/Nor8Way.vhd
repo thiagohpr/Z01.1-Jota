@@ -15,7 +15,29 @@ entity Nor8Way is
 end entity;
 
 architecture arch of Nor8Way is
+
+
+	signal aux1 : std_logic;
+	signal aux2 : std_logic;
+	signal aux3 : std_logic;
+	signal aux4 : std_logic;
+	signal aux5 : std_logic;
+	signal aux6 : std_logic;
+	signal aux7 : std_logic;
+
+
 begin
+
+	aux1 <= a or b;
+	aux2 <= c or d;
+	aux3 <= e or f;
+	aux4 <= g or h;
+
+	aux5 <= aux1 or aux2;
+	aux6 <= aux3 or aux4;
+	aux7 <= aux5 or aux6;
+
+	q <= not aux7;	
 
 
 end architecture;
