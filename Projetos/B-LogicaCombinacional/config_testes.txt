@@ -10,16 +10,16 @@
 
 #nand.vhd
 #Or16.vhd
-Nor8Way.vhd
+#Nor8Way.vhd
 #And16.vhd
 #Not16.vhd
 #Or8Way.vhd
 #DMux2Way.vhd
 #DMux4Way.vhd
-DMux8Way.vhd
+#DMux8Way.vhd
 #Mux2Way.vhd
 #Mux4Way.vhd
-Mux16.vhd
+#Mux16.vhd
 #Mux4Way16.vhd
 #Mux8Way.vhd
 #Mux8Way16.vhd
@@ -31,5 +31,5 @@ Mux16.vhd
 
 ##### conceito A e B
 
-#ConceitoB.vhd
+ConceitoB.vhd
 #ConceitoA.vhd
