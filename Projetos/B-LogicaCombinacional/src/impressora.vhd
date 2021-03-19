@@ -11,5 +11,6 @@ architecture arch of impressora is
 
 begin
 
+    x <= ((((((not SW1) and SW2)and SW4) or (((not SW1) and SW3) and SW4)) or ((SW2 and SW3)and not SW4)) or ((SW1 and SW3)and not SW4)) or ((((SW1 and  SW2) and not SW3) and not SW4));
 
 end architecture;
