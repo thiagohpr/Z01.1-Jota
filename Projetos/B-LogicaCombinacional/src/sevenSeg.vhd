@@ -9,6 +9,7 @@ end entity;
 
 architecture arch of sevenSeg is
 begin
+
 	with bcd select
 		leds<="0000001" when "0000",
 				"1001111" when "0001",
@@ -26,4 +27,5 @@ begin
 				"1000010" when "1101",
 				"0110000" when "1110",
 				"0111000" when others;
+
 end architecture;
