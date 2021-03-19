@@ -10,5 +10,10 @@ end entity;
 architecture arch of detectorDeMoedas is
 
 begin
+    cents(0)<= (Q and (not D) and (not N)) or ((not Q) and (not D) and N);
+	cents(1)<= (not Q) and D and (not N);
+	cents(2)<= (not Q) and (not D) and N;
+	cents(3)<= (Q and (not D) and (not N)) or ((not Q) and D and (not N));
+	cents(4)<= Q and (not D) and (not N);
 
 end architecture;
