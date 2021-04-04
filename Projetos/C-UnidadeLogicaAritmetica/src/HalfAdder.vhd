@@ -20,6 +20,7 @@ architecture rtl of HalfAdder is
   -- utilizados nesse modulo.
 
 begin
+
   -- Implementação vem aqui!
   soma <= (not(a) and b) or (a and not(b));
   vaium <= a and b;
