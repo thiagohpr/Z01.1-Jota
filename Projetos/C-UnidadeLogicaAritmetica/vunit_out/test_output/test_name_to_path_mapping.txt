@@ -1,2 +1,3 @@
+lib.tb_alu.all_776e1fb2296393bd00b7230172cd9214b3490146 lib.tb_alu.all
 lib.tb_fulladder.all_06db0ee602f16124af31f0ebe6776ffb6cee0ad1 lib.tb_fulladder.all
 lib.tb_halfadder.all_2a9f30afe01faed90d95ca9cf2cee2354e984c4c lib.tb_halfadder.all
