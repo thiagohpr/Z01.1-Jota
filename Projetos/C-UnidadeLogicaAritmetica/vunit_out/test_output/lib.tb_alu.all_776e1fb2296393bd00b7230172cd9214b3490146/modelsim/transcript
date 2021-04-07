@@ -1,0 +1,44 @@
+# Reading pref.tcl
+# source "/home/borg/Desktop/Z01.1-Jota/Projetos/C-UnidadeLogicaAritmetica/vunit_out/test_output/lib.tb_alu.all_776e1fb2296393bd00b7230172cd9214b3490146/modelsim/gui.do"
+# vsim -modelsimini /home/borg/Desktop/Z01.1-Jota/Projetos/C-UnidadeLogicaAritmetica/vunit_out/modelsim/modelsim.ini -wlf /home/borg/Desktop/Z01.1-Jota/Projetos/C-UnidadeLogicaAritmetica/vunit_out/test_output/lib.tb_alu.all_776e1fb2296393bd00b7230172cd9214b3490146/modelsim/vsim.wlf -quiet -t ps -onfinish stop lib.tb_alu(tb) -L vunit_lib -L lib -g/tb_alu/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/borg/Desktop/Z01.1-Jota/Projetos/C-UnidadeLogicaAritmetica/vunit_out/test_output/lib.tb_alu.all_776e1fb2296393bd00b7230172cd9214b3490146/,tb path : /home/borg/Desktop/Z01.1-Jota/Projetos/C-UnidadeLogicaAritmetica/testes/,use_color : false" 
+# Start time: 20:22:50 on Apr 06,2021
+# ** Warning: Design size of 22374 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# List of VUnit commands:
+# vunit_help
+#   - Prints this help
+# vunit_load [vsim_extra_args]
+#   - Load design with correct generics for the test
+#   - Optional first argument are passed as extra flags to vsim
+# vunit_user_init
+#   - Re-runs the user defined init file
+# vunit_run
+#   - Run test, must do vunit_load first
+# vunit_compile
+#   - Recompiles the source files
+# vunit_restart
+#   - Recompiles the source files
+#   - and re-runs the simulation if the compile was successful
+add wave sim:/tb_alu/*
+add wave -position 7  sim:/tb_alu/mapping/x
+add wave -position 8  sim:/tb_alu/mapping/y
+add wave -position 9  sim:/tb_alu/mapping/zx
+add wave -position 10  sim:/tb_alu/mapping/nx
+add wave -position 11  sim:/tb_alu/mapping/zy
+add wave -position 12  sim:/tb_alu/mapping/ny
+add wave -position 13  sim:/tb_alu/mapping/f
+add wave -position 14  sim:/tb_alu/mapping/no
+add wave -position 15  sim:/tb_alu/mapping/zr
+add wave -position 16  sim:/tb_alu/mapping/ng
+add wave -position 17  sim:/tb_alu/mapping/saida
+add wave -position 18  sim:/tb_alu/mapping/zxout
+add wave -position 19  sim:/tb_alu/mapping/zyout
+add wave -position 20  sim:/tb_alu/mapping/nxout
+add wave -position 21  sim:/tb_alu/mapping/nyout
+add wave -position 22  sim:/tb_alu/mapping/andout
+add wave -position 23  sim:/tb_alu/mapping/adderout
+add wave -position 24  sim:/tb_alu/mapping/muxout
+add wave -position 25  sim:/tb_alu/mapping/precomp
+vunit_run
+# Break in Subprogram stop at /home/borg/.local/lib/python3.8/site-packages/vunit/vhdl/core/src/stop_body_2008p.vhd line 13
+# false
