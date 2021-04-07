@@ -1,0 +1,2 @@
+skip (P=0 S=1 F=0 T=1) lib.tb_alu.all (1960.5 seconds)
+
