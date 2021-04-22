@@ -24,8 +24,17 @@ architecture arch of Register16 is
 			output: out STD_LOGIC_VECTOR(7 downto 0)
 		);
 	end component;
+	signal entrada, saida: STD_LOGIC_VECTOR(15 downto 0);
+
 
 begin
+	
+	entrada <= input;
+
+	u0: Register8 port map(clock, entrada(15 downto 8), load, saida(15 downto 8));
+	u1: Register8 port map(clock, entrada(7 downto 0), load, saida(7 downto 0));
+
+	output <= saida;
 
 
 end architecture;
