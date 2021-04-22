@@ -68,7 +68,7 @@ begin
 	u6: Register16 port map(clock, input, load6, output6);
 	u7: Register16 port map(clock, input, load7, output7);
 
-	mux: Mux8Way16 port map(output0, output1, output2, output3, output4, output5, output6, output7, adress, output);
+	mux: Mux8Way16 port map(output0, output1, output2, output3, output4, output5, output6, output7, address, output);
 	dmux: DMux8Way port map(load, address, load0, load1, load2, load3, load4, load5, load6, load7);
 
 end architecture;
