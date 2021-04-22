@@ -25,7 +25,22 @@ architecture arch of Register8 is
 		);
 	end component;
 
+	signal saida, entrada: STD_LOGIC_VECTOR(7 downto 0);
+
 begin
+
+	entrada <= input;
+
+	e0: BinaryDigit port map(clock, entrada(0), load, saida(1));
+	e1: BinaryDigit port map(clock, entrada(1), load, saida(2));
+	e2: BinaryDigit port map(clock, entrada(2), load, saida(3));
+	e3: BinaryDigit port map(clock, entrada(3), load, saida(4));
+	e4: BinaryDigit port map(clock, entrada(4), load, saida(5));
+	e5: BinaryDigit port map(clock, entrada(5), load, saida(6));
+	e6: BinaryDigit port map(clock, entrada(6), load, saida(7));
+	e7: BinaryDigit port map(clock, entrada(7), load, saida(8));
+
+	output <= saida;
 
 
 end architecture;
