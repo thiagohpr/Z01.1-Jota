@@ -16,7 +16,7 @@ Register8.vhd
 ########
 # Rubrica A
 #
-#FlipFlopT.vhd
+FlipFlopT.vhd
 #FlipFlopJK.vhd
 #CounterDown.vhd
  
