@@ -20,4 +20,33 @@
 ;  RAM[14] = a
 ; 
 
- 
+
+leaw $10, %A
+movw (%A), %D
+leaw $14, %A
+subw %D, (%A), %D
+leaw $IF, %A
+je %D
+nop
+leaw $0, %A
+movw $0, (%A)
+leaw $END, %A
+jne %D
+nop
+IF:
+leaw $11, %A
+movw (%A), %D
+leaw $13, %A
+subw %D, (%A), %D
+leaw $ELIF, %A
+je %D
+nop
+leaw $0, %A
+movw $0, (%A)
+leaw $END, %A
+je %D
+nop
+ELIF:
+leaw $0, %A
+movw $1, (%A)
+END:
