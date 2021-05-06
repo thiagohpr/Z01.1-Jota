@@ -27,3 +27,40 @@
 ;  RAM[15] = NULL = 0x0000
 
 
+leaw $8, %A
+movw %A, %D
+leaw $1, %A 
+movw %D, (%A) 
+
+LOOPCONTA:
+
+leaw $1, %A
+movw (%A), %A 
+movw (%A), %D
+
+leaw $END, %A 
+je %D 
+nop
+
+leaw $1, %A
+movw %A, %D
+leaw $0, %A
+addw (%A), %D, %D
+movw %D, (%A)
+leaw $1, %A
+movw %A, %D
+addw (%A), %D, %D
+movw %D, (%A)
+
+leaw $LOOPCONTA, %A
+jmp
+nop
+
+END:
+
+leaw $0, %A
+movw (%A), %D
+leaw $1, %A
+addw %A, %D, %D
+leaw $0, %A
+movw %D, (%A)
