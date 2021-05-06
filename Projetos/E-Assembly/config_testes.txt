@@ -10,8 +10,8 @@
 # conceito C
 ##########################
 
-add.nasm 1 1000
-#sub.nasm 1 1000
+#add.nasm 1 1000
+sub.nasm 1 1000
 #mov.nasm 1 1000
 #abs.nasm 2 1000
 #max.nasm 2 10000
@@ -37,7 +37,12 @@ add.nasm 1 1000
 ###########################
 ## conceito A
 ###########################
-
+#leaw $1, %A
+#movw (%A), %D
+#leaw $0, %A
+#subw (%A), %D, %D
+#leaw $2, %A
+#movw %D, (%A)
 #vectorMean.nasm 2 2000
 #SWeLED2.nasm 1 1000
 
