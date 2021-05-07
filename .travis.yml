@@ -54,4 +54,4 @@ script:
   - python3 Projetos/C-UnidadeLogicaAritmetica/testeULA.py 
   - python3 Projetos/D-LogicaSequencial/testeLogicaSequencial.py
   - python3 Projetos/E-Assembly/testeAssembly.py
-  - python3 Projetos/F-Computador/testeComputador.py
+  - python3 Projetos/F-Computador/testeHW.py
