@@ -55,3 +55,4 @@ script:
   - python3 Projetos/D-LogicaSequencial/testeLogicaSequencial.py
   - python3 Projetos/E-Assembly/testeAssembly.py
   - python3 Projetos/F-Computador/testeHW.py
+  - python3 Projetos/G-Assembler/testeAssembler.py
