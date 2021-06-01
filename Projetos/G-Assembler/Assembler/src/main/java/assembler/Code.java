@@ -17,7 +17,34 @@ public class Code {
      */
     public static String dest(String[] mnemnonic) {
         /* TODO: implementar */
-    	return "";
+        if (mnemnonic.length == 2) {
+            switch (mnemnonic[1]) {
+                case "%A": return "0001";
+                case "%D": return "0010";
+                case "(%A)": return "0100";
+            }
+        } else if (mnemnonic.length == 3) {
+            switch (mnemnonic[2]) {
+                case "%A": return "0001";
+                case "%D": return "0010";
+                case "(%A)": return "0100";
+            }
+        } else if (mnemnonic.length == 4) {
+            if (mnemnonic[0].equals("movw")) {
+                switch (mnemnonic[2] + mnemnonic[3]) {
+                    case "%D(%A)": return "0110";
+                    case "%A%D": return "0101";
+                    case "%D%A": return "0011";
+                }
+            } else {
+                switch (mnemnonic[3]) {
+                    case "%D": return "0010";
+                    case "%A": return "0001";
+                    case "(%A)": return "0100";
+                }
+            }
+        }
+        return "0000";
     }
 
     /**
@@ -27,7 +54,71 @@ public class Code {
      */
     public static String comp(String[] mnemnonic) {
         /* TODO: implementar */
-    	return "";
+        switch (mnemnonic[0]) {
+            case "movw":
+                switch (mnemnonic[1]) {
+                    case "%A": return "000110000";
+                    case "%D": return "000001100";
+                    case "(%A)": return "001110000";
+                    case "$1": return "000111111";
+                    case "$0": return "000101010";
+                }
+            case "incw":
+                switch (mnemnonic[1]) {
+                    case "%A": return "000110111";
+                    case "%D": return "000011111";
+                    case "(%A)": return "001110111";
+                }
+            case "decw":
+                switch (mnemnonic[1]) {
+                    case "%D": return "000001110";
+                    case "%A": return "000110010";
+                    case "(%A)": return "001110010";
+                }
+            case "orw":
+                switch (mnemnonic[1]) {
+                    case "%D":
+                    case "%A": return "000010101";
+                    case "(%A)": return "001010101";
+                }
+            case "notw":
+                switch (mnemnonic[1]) {
+                    case "%D": return "000001101";
+                    case "%A": return "000110001";
+                    case "(%A)": return "001110001";
+                }
+            case "negw":
+                switch (mnemnonic[1]) {
+                    case "%D": return "000001111";
+                    case "%A": return "000110011";
+                    case "(%A)": return "001110011";
+                }
+
+            case "andw":
+                switch (mnemnonic[1]) {
+                    case "(%A)": return "001000000";
+                    case "%D":
+                    case "%A": return "000000000";
+                }
+            case "addw":
+                switch (mnemnonic[1]) {
+                    case "%A":
+                    case "%D": return "000000010";
+                    case "(%A)": return "001000010";
+                    case "$1": return "001110111";
+                }
+
+            case "subw":
+                switch (mnemnonic[1]) {
+                    case "%D": return "001010011";
+                    case "(%A)": return "001110010";
+                }
+            case "rsubw":
+                if (mnemnonic[1].equals("%D")) {
+                    return "001000111";
+                }
+            default: return "000001100";
+        }
     }
 
     /**
@@ -37,7 +128,16 @@ public class Code {
      */
     public static String jump(String[] mnemnonic) {
         /* TODO: implementar */
-    	return "";
+        switch (mnemnonic[0]){
+            case "jmp"  : return "111";
+            case "jg" : return "001";
+            case "je" : return "010";
+            case "jge" : return "011";
+            case "jl" : return "100";
+            case "jne" : return "101";
+            case "jle" : return "110";
+            default    : return "000";
+        }
     }
 
     /**
@@ -47,7 +147,9 @@ public class Code {
      */
     public static String toBinary(String symbol) {
         /* TODO: implementar */
-    	return "";
+        int valorNumerico = Integer.parseInt(symbol);
+        String binario = Integer.toBinaryString(valorNumerico);
+        return String.format("%1$16s", binario).replace(" ", "0");
     }
 
 }
