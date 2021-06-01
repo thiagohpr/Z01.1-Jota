@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Encapsula o código de leitura. Carrega as instruções na linguagem assembly,
@@ -89,7 +91,33 @@ public class Parser {
      */
     public CommandType commandType(String command) {
         /* TODO: implementar */
-    	return null;
+        List<String> jumpers=new ArrayList<>();
+        jumpers.add("jg");
+        jumpers.add("je");
+        jumpers.add("jge");
+        jumpers.add("jl");
+        jumpers.add("jne");
+        jumpers.add("jle");
+        jumpers.add("jmp");
+        jumpers.add("nop");
+        if (command.contains("leaw")){
+            return CommandType.A_COMMAND;
+        }
+        else if (command.contains(" ")==false){
+            List<Boolean> contemJumper=new ArrayList<>();
+            int len=jumpers.size();
+            for (String i:jumpers){
+                if (command.contains(i)==false){
+                    contemJumper.add(false);
+                }else{contemJumper.add(true);}
+            }
+
+            if (contemJumper.contains(true)){
+                return CommandType.C_COMMAND;
+            }else{return CommandType.L_COMMAND;}
+        }else{
+            return CommandType.C_COMMAND;
+        }
     }
 
     /**
@@ -100,7 +128,23 @@ public class Parser {
      */
     public String symbol(String command) {
         /* TODO: implementar */
-    	return null;
+        /*SUBSTRING 6 ATE A VIRGULA*/
+        int indexVirgula=7;
+        String symbol=";";
+        if (this.commandType(command)==CommandType.A_COMMAND){
+
+            for (int i=0;i<command.length();i++){
+                char letra=command.charAt(i);
+                if (letra==','){
+                    indexVirgula=i;
+
+                }
+
+            }
+
+        }
+        symbol=command.substring(6,indexVirgula);
+        return symbol;
     }
 
     /**
@@ -110,8 +154,11 @@ public class Parser {
      * @return o símbolo da instrução (sem os dois pontos).
      */
     public String label(String command) {
-        /* TODO: implementar */
-    	return null;
+        String symbol="";
+        if (this.commandType(command)==CommandType.L_COMMAND){
+            symbol= command.substring(0, command.length() - 1);
+        }
+    	return symbol;
     }
 
     /**
@@ -122,7 +169,17 @@ public class Parser {
      */
     public String[] instruction(String command) {
         /* TODO: implementar */
-    	return null;
+        String[] tokens={};
+        /*Split no espaco (substituir , por espaço)   */
+
+        String token = command.replaceAll(","," ");
+        tokens=token.split("\\s");
+    	return tokens;
+
+
+
+
+
     }
 
 
