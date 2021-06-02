@@ -40,10 +40,10 @@ public class SymbolTable {
     public Boolean contains(String symbol) {
         /* TODO: implementar */
         if (symbolTable.containsKey(symbol)){
-            return true
+            return true;
         }
         else{
-            return false
+            return false;
         }
     }
 

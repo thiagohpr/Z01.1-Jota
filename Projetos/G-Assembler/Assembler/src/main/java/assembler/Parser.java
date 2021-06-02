@@ -169,17 +169,22 @@ public class Parser {
      */
     public String[] instruction(String command) {
         /* TODO: implementar */
-        String[] tokens={};
-        /*Split no espaco (substituir , por espaço)   */
+    	try {
+            command = command.replace("  ", " ");
+            command = command.replace("   ", " ");
+            command = command.replace("    ", " ");
+            command = command.replace("     ", " ");
+            command = command.replace(" ", ";");
+            command = command.replace(",", ";");
+            command = command.replace(";;", ";");
 
-        String token = command.replaceAll(","," ");
-        tokens=token.split("\\s");
-    	return tokens;
+        } catch(Exception e){
+            e.printStackTrace();
+        }
 
+        String[] instruction = command.split(";");
 
-
-
-
+        return instruction;
     }
 
 
